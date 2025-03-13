@@ -1,0 +1,21 @@
+div {
+    width: 300px;
+    height: 40px;
+    background-color: blue;
+}
+.quadro {
+    width: 300px;
+    height: 40px;
+    background-color: brown;
+}
+
+#id {
+    width: 300px;
+    height: 40px;
+    background-color: chartreuse; 
+}
+
+.paragrafo {
+    font-size: 28px;
+    color: burlywood;
+}
