@@ -54,7 +54,8 @@ project-root/
 └── db.sql              # Script para criar o banco de dados
 ```
 ---
-- Obs: O arquivo READM.md ficará no raiz do repositório.
+Obs: O arquivo READM.md ficará no raiz do repositório.
+
 ---
 
 ## ⚙️ Vamos configurar o Ambiente
@@ -151,4 +152,5 @@ Continue evoluindo, desenvolvendo e aprimorando suas habilidades. 🚀
 Havendo dúvidas ou sugestões, fique à vontade para contribuir ou deixar um comentário. 😄
 
 Minhas redes sociais estão em meu [perfil](https://github.com/herculesrocha).
+
 ---
