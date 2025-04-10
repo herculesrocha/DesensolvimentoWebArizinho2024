@@ -53,6 +53,7 @@ project-root/
 │   └── img/            # Pasta para imagens
 └── db.sql              # Script para criar o banco de dados
 ```
+---
 Obs: O arquivo READM.md ficará no raiz do repositório.
 ---
 
