@@ -1,40 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=""UTF-8>
-        <meta name="viewport" content="width=device-width, inicial-scalet=1.0">
-        <title>Cadastro</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-        <link rel="stylesheet" href="/public/css/styles.css">
-    </head>
-    <body>
-        <div class="container mt-5">
-            <h2 class="mb-4">Cadastro de Produto</h2>
-            <button id="addProductBtn" class="btn btn-primary mb-3">Adicionar Produto</button>
-            <div id="productForm" style="display: nome;" class="card card-body mb-3">
-                <form action="/add" method="POST">
-                    <div class="form-group">
-                        <label for="description">Descrição</label>
-                        <input type="text" id="description" name="description" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="value">Valor</label>
-                        <input type="text" id="value" name="value" class="form-control" required>
-                    </div>
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                        <button type="button" id="cancelBtn" class="btn btn-secondary">Cancelar</button>
-                    </form>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-bordered">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Cadastro de Produto</h2>
+        <button id="addProductBtn" class="btn btn-primary mb-3">Adicionar Produto</button>
+        <div id="productForm" style="display:none;" class="card card-body mb-3">
+            <form action="/add" method="POST">
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <input type="text" id="description" name="description" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="value">Valor:</label>
+                    <input type="text" id="value" name="value" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <button type="button" id="cancelBtn" class="btn btn-secondary">Cancelar</button>
+            </form>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-light">
                     <tr>
                         <th>ID Produto</th>
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Ações</th>
                     </tr>
-                </table>
-            </div>
+                </thead>
+                <tbody>
+                    <% products.forEach(product => { %>
+                    <tr>
+                        <td><%= product.id %></td>
+                        <td><%= product.description %></td>
+                        <td><%= product.value %></td>
+                        <td>
+                            <button class="btn btn-warning editBtn" data-id="<%= product.id %>">Editar</button>
+                            <form action="/delete/<%= product.id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
         </div>
-    </body>
+    </div>
+    <script src="/js/scripts.js"></script>
+</body>
 </html>
