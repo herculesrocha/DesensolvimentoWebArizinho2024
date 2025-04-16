@@ -132,13 +132,22 @@ Obs: O arquivo READM.md ficará no raiz do repositório.
   });
   ```
 
-### 2️⃣ **Erro "Cannot GET /"?**
+### 2️⃣ **Erro "C:\Program Files\nodejs\npm.ps1 não pode ser carregado." com o commando "npm install" ao instalar dependências do projeto**
+- Pressione a tecla Windows + X e click em Windows PowerShell (Admin)
+- Digite os camandos:
+- Set-ExecutionPolicy AllSigned -Scope CurrentUser -Force
+- Ou:
+- Set-ExecutionPolicy AllSigned -Scope CurrentUser -Force
+- Para restringir novamente digite Set-ExecutionPolicy Restricted -Scope CurrentUser -Force
+* Obs.: Leia sobre Permissão de Execução de Scripts
+  
+### 3️⃣ **Erro "Cannot GET /"**
 - Certifique-se de que o servidor Node.js está rodando. Use o comando:
   ```bash
   node app.js
   ```
 
-### 3️⃣ **Mudanças no código não aparecem no navegador?**
+### 4️⃣ **Mudanças no código não aparecem no navegador?**
 - Atualize a página no navegador
 - Certifique-se de salvar os arquivos antes de atualizar o navegador.
 
